@@ -1,0 +1,74 @@
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 1rem;
+  //   background-color: rgba(255, 255, 255, 1);
+  background-color: #181818;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.card__name {
+  span {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: 0.2rem solid #ffffff;
+    }
+  }
+}
+
+.card__dec {
+  p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    margin: 1.6rem 0;
+  }
+}
+
+.btn__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    // background-color: #181818;
+    background-color: #323232;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+    span {
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.1rem;
+      color: #ffffff;
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}

@@ -5,9 +5,9 @@ import Card from "../Components/AuthoreCard/Card";
 import LoadingCard from "../Components/LoadingCard/LoadingCard";
 import Navbar from "../Components/Navbar/Navbar";
 
-const handleAuthorsData = async (page) => {
+const handleAuthorsData = async (page, Order) => {
   const res = await fetch(
-    `https://api.quotable.io/authors?page=${page}&order=asc`
+    `https://api.quotable.io/authors?page=${page}&order=${Order}`
   );
   return res.json();
 };
@@ -17,14 +17,15 @@ const Home = () => {
   const [popup, setPopup] = useState(false);
   const [name, setName] = useState("");
   const [quote, setQuote] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
 
   const loadingScreen = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
   ];
 
   const { isLoading, data } = useQuery(
-    ["Authors", page],
-    () => handleAuthorsData(page),
+    ["Authors", page, sortOrder],
+    () => handleAuthorsData(page, sortOrder),
     {
       refetchOnMount: false,
       refetchOnWindowFocus: false,
@@ -54,7 +55,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar setSortOrder={setSortOrder} />
       <div className={Style.home}>
         <div className="container-fluid">
           <div className="row gy-5">

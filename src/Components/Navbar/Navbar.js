@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import Style from "./Navbar.module.scss";
 
-const Navbar = () => {
+const Navbar = ({ setSortOrder }) => {
   const [sort, setSort] = useState(true);
   const [sort2, setSort2] = useState(false);
 
   const handleSort = (sortValue) => {
-    console.log(sortValue);
     if (sortValue === 1) {
+      setSortOrder("asc");
       setSort(true);
       setSort2(false);
     }
 
     if (sortValue === 2) {
+      setSortOrder("desc");
       setSort2(true);
       setSort(false);
     }

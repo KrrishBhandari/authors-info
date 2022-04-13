@@ -1,14 +1,26 @@
 .home {
+  position: relative;
   max-width: 1450px;
   height: 100%;
-  // background-color: #f3f3f3;
   background-color: #121212;
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #5f6368;
+  }
 }
+
+// Btn css here
 
 .btn__wrapper {
   margin-top: 2.4rem;
@@ -40,4 +52,111 @@
     color: #ffffff;
     margin: 0 1rem;
   }
+}
+
+// Popup css here
+
+.popup__Container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54rem;
+  background-color: RGB(39, 39, 39);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  transition: all 0.5s;
+  padding: 1rem 0 0;
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    line-height: 2.8rem;
+    color: #ffffff;
+    margin: 1.2rem 0;
+  }
+}
+
+.popup__title {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h4 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    line-height: 2.8rem;
+    color: #ffffff;
+  }
+}
+
+.title__icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 10rem;
+  background-color: #323232;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.popup__quote {
+  padding: 1rem 2rem;
+  background-color: RGB(45, 45, 45);
+  margin: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  // border: 0.1rem solid #616161;
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    line-height: 2.8rem;
+    color: #ffffff;
+  }
+}
+
+.popup__closeBtn {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  .popup__wrapper {
+    display: flex;
+
+    button {
+      padding: 1.2rem 3rem;
+      margin-right: 0.5rem;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.1rem;
+      color: #ffffff;
+      border-radius: 0.3rem;
+      border: none;
+      outline: none;
+      background-color: transparent;
+
+      &:nth-child(2) {
+        background-color: RGB(187, 134, 252);
+      }
+    }
+  }
+}
+
+.active {
+  visibility: visible;
 }

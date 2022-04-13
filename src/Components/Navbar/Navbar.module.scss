@@ -1,0 +1,51 @@
+.navbar {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background-color: RGB(29, 29, 29);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    margin-right: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    padding: 1rem 4rem;
+    margin: 0 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: #000000;
+    border-radius: 0.5rem;
+    background-color: RGB(51, 51, 51);
+    background-color: RGB(187, 134, 252);
+  }
+}
+
+.btn1 {
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+}
+
+.btn2 {
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+}

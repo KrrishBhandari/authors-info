@@ -1,0 +1,69 @@
+.card {
+  width: 100%;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: RGB(29, 29, 29);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.card__name {
+  padding: 1.5rem;
+  background-color: RGB(36, 36, 36);
+}
+
+.card__dec {
+  padding: 4rem;
+  background-color: RGB(36, 36, 36);
+  margin: 1rem 0;
+}
+
+.btn__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background-color: RGB(36, 36, 36);
+    border-radius: 0.5rem;
+
+    span {
+      visibility: hidden;
+    }
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+.card__name,
+.card__dec,
+.btn__wrapper a {
+  background-color: RGB(36, 36, 36);
+  background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 60%
+    )
+    RGB(36, 36, 36);
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 0.8s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}

@@ -1,14 +1,20 @@
 import React from "react";
 import Style from "./Card.module.scss";
 
-const Card = ({ author }) => {
-  const { name, description, link } = author;
+const Card = ({ author, setPopup, setName, setQuote }) => {
+  const { name, description, link, bio } = author;
+
+  const handlePopupData = (getName, getBio) => {
+    setPopup(true);
+    setName(getName);
+    setQuote(getBio);
+  };
 
   return (
     <div className={Style.card}>
       <div className={Style.wrapper}>
         <div className={Style.card__name}>
-          <span>{name}</span>
+          <span onClick={() => handlePopupData(name, bio)}>{name}</span>
         </div>
         <div className={Style.card__dec}>
           <p>{description}</p>

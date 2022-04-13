@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Style from "../Styles/Home.module.scss";
 import { useQuery } from "react-query";
 import Card from "../Components/AuthoreCard/Card";
 
-const handleAuthorsData = async () => {
-  const res = await fetch("https://api.quotable.io/authors");
+const handleAuthorsData = async (page) => {
+  const res = await fetch(`https://api.quotable.io/authors?page=${page}`);
   return res.json();
 };
 
 const Home = () => {
-  const { isLoading, data } = useQuery("Authors", handleAuthorsData, {
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-  });
+  const [page, setPage] = useState(1);
+
+  const { isLoading, data } = useQuery(
+    ["Authors", page],
+    () => handleAuthorsData(page),
+    {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    }
+  );
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -30,7 +36,19 @@ const Home = () => {
             );
           })}
         </div>
-        {console.log(data.results)}
+      </div>
+
+      <div className={Style.btn__wrapper}>
+        <button
+          onClick={() => setPage((old) => Math.max(old - 1, 1))}
+          disabled={page === 1}
+        >
+          Prev page
+        </button>
+        <p>{page}</p>
+        <button onClick={() => setPage(page + 1)} disabled={page === 35}>
+          Next page
+        </button>
       </div>
     </div>
   );

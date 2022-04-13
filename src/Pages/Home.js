@@ -103,11 +103,12 @@ const Home = () => {
                 <box-icon name="x" color="#99ffff"></box-icon>
               </div>
             </div>
+
             <div className={Style.popup__quote}>
               <p>{quote}</p>
             </div>
+
             <div className={Style.popup__closeBtn}>
-              <span></span>
               <div className={Style.popup__wrapper}>
                 <button onClick={() => setPopup(false)}>Close</button>
 

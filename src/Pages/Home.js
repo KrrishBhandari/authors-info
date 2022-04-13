@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import Card from "../Components/AuthoreCard/Card";
 import LoadingCard from "../Components/LoadingCard/LoadingCard";
 import Navbar from "../Components/Navbar/Navbar";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const handleAuthorsData = async (page, Order) => {
   const res = await fetch(
@@ -99,7 +100,7 @@ const Home = () => {
                 className={Style.title__icon}
                 onClick={() => setPopup(false)}
               >
-                <box-icon name="x" color="RGB(187, 134, 252)"></box-icon>
+                <box-icon name="x" color="#99ffff"></box-icon>
               </div>
             </div>
             <div className={Style.popup__quote}>
@@ -109,9 +110,12 @@ const Home = () => {
               <span></span>
               <div className={Style.popup__wrapper}>
                 <button onClick={() => setPopup(false)}>Close</button>
-                <button onClick={() => setPopup(false)}>
-                  Copy to Clipboard
-                </button>
+
+                <CopyToClipboard text={quote}>
+                  <button onClick={() => setPopup(false)}>
+                    Copy to clipboard
+                  </button>
+                </CopyToClipboard>
               </div>
             </div>
           </div>

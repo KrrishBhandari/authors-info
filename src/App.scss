@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Satoshi", sans-serif;
   font-size: 10px;
 }
 
@@ -16,4 +17,9 @@ body {
   &::-webkit-scrollbar-thumb {
     background: #5f6368;
   }
+}
+
+button,
+input {
+  font-family: "Satoshi", sans-serif;
 }
